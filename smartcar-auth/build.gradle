@@ -12,10 +12,10 @@ group = libGroup
 version = libVersion
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 31
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -129,13 +129,7 @@ afterEvaluate {
     }
 }
 
-/**
- * Requires the following environment variables to be set:
- *  - ORG_GRADLE_PROJECT_signingKey
- *  - ORG_GRADLE_PROJECT_signingPassword
- *
- * @see https://docs.gradle.org/current/userguide/signing_plugin.html#sec:in-memory-keys
- */
+
 afterEvaluate {
     signing {
         useInMemoryPgpKeys findProperty("signingKey"), findProperty("signingPassword")
